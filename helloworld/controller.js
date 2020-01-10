@@ -1,3 +1,3 @@
-controller("helloworld", function ($scope) {
-
+controller("helloworld", function ($scope, $routeParams) {
+    $scope.message = $routeParams.arg1;
 })
