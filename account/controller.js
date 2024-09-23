@@ -1,6 +1,6 @@
 function openAccount(success) {
     window.$mdDialog.show({
-        templateUrl: '/angular-example2/account/index.html',
+        templateUrl: '/angular-example/account/index.html',
         controller: function ($scope) {
             addFormats($scope)
         }
