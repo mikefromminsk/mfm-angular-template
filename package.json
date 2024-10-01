@@ -1,4 +1,7 @@
 {
+  "name": "angular-template",
+  "version": "1.0.0",
+  "author": "x29a100@gmail.com",
   "dependencies": {
     "angular": "^1.8.2",
     "angular-animate": "^1.7.2",
