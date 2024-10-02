@@ -1,6 +1,6 @@
 {
     "name": "mfm-angular-template",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "author": "x29a100@gmail.com",
     "dependencies": {
         "angular": "^1.8.2",
