@@ -15,7 +15,7 @@ function main($scope, $mdBottomSheet, $mdDialog, $mdToast) {
     }
 
     function loadProfile() {
-        postContract("wallet", "api/profile.php", {
+        postContract("mfm-wallet", "api/profile.php", {
             domain: domain,
             address: wallet.address(),
         }, function (response) {

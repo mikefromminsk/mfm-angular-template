@@ -1,8 +1,14 @@
 {
-  "name": "mfm-angular-template",
-  "version": "1.0.1",
-  "author": "x29a100@gmail.com",
-  "dependencies": {
-    "mfm-wallet": "^1.0.0"
-  }
+    "name": "mfm-angular-template",
+    "version": "1.0.5",
+    "author": "x29a100@gmail.com",
+    "dependencies": {
+        "angular": "^1.8.2",
+        "angular-animate": "^1.7.2",
+        "angular-aria": "^1.7.2",
+        "angular-material": "^1.2.5",
+        "angular-messages": "^1.7.2",
+        "angular-flex-short": "^1.0.0",
+        "mfm-wallet": "^1.0.0"
+    }
 }
