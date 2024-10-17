@@ -31,7 +31,6 @@ function showBottomSheet(templateUrl, onClose, controller) {
     window.$mdBottomSheet.show({
         templateUrl: templateUrl,
         escapeToClose: false,
-        multiple: true,
         controller: function ($scope) {
             addFormats($scope)
             controller($scope)
