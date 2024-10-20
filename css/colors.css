@@ -520,7 +520,11 @@
 }
 
 .shadow-black {
-    box-shadow: 0 0 3px 0 var(--staticBlack);
+    box-shadow: 0 0 3px 0 var(--black);
+}
+
+.shadow-white {
+    box-shadow: 0 0 3px 0 var(--white);
 }
 
 .shadow-blue {

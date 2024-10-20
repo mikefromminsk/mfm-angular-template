@@ -1,7 +1,11 @@
 function main($scope) {
 
-    $scope.openAccount = function () {
-        openAccount()
+    $scope.openDialogExample = function () {
+        openDialogExample()
+    }
+
+    $scope.openBottomSheetExample = function () {
+        openBottomSheetExample()
     }
 
     var domain = getParam("domain")
@@ -11,7 +15,7 @@ function main($scope) {
     }
 
     function loadProfile() {
-        postContract("mfm-wallet", "api/profile.php", {
+        postContract("mfm-token", "profile.php", {
             domain: domain,
             address: wallet.address(),
         }, function (response) {

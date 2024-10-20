@@ -7,10 +7,9 @@
 
 <body class="col" ng-app="App" ng-controller="Controller">
 <div class="row header align-center">
-    <div class="row block align-start-center">
-        <p ng-click="openAccount()">Page1</p>
-        <p>Page2</p>
-        <p>Page3</p>
+    <div class="row block align-start-center gap16">
+        <p ng-click="openBottomSheetExample()">Open Bottom Sheet</p>
+        <p ng-click="openDialogExample()">Dialog</p>
     </div>
 </div>
 <div class="col content align-start-center scroll">
@@ -46,6 +45,7 @@
 <script async src="/mfm-wallet/dialogs/success/controller.js"></script>
 <script async src="/mfm-wallet/dialogs/info/controller.js"></script>
 
-<script async src="account/controller.js"></script>
+<script async src="bottom-sheet/controller.js"></script>
+<script async src="dialog/controller.js"></script>
 
 </body>

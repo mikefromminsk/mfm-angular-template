@@ -200,25 +200,6 @@ function addFormats($scope) {
         document.body.removeChild(textArea);
     }
 
-    $scope.cardBack = function (coin) {
-        function hexEncode(str) {
-            var result = '';
-            for (var i = 0; i < str.length; i++) {
-                result += str.charCodeAt(i).toString(16);
-            }
-            return result;
-        }
-
-        function getColor(t) {
-            return "#" + hexEncode(md5(t)).substr(0, 6)
-        }
-        if (coin == null)
-            return {}
-        return {
-            'background': 'linear-gradient(75deg, var(--bottom) 0%, ' + getColor(coin.domain) + ' 100%)',
-        }
-    }
-
     $scope.cardFront = function (coin) {
         return {
         }
