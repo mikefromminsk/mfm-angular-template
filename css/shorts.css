@@ -448,6 +448,11 @@ md-bottom-sheet {
     white-space: nowrap;
 }
 
+.nowrap-disabled {
+    white-space: normal;
+    word-break:break-word;
+}
+
 .cursor {
     cursor: pointer;
 }
