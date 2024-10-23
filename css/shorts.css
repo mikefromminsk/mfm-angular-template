@@ -445,6 +445,7 @@ md-bottom-sheet {
     position: absolute;
     top: 0;
     /*border-top-right-radius: 60px;*/
+    background-color: var(--white);
     font-size: 24px;
     font-family: Gilroy-ExtraBold;
 }
