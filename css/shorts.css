@@ -162,7 +162,7 @@ input::-webkit-inner-spin-button {
     color: var(--gray400);
 }
 
-.input-wrapper-black > .input-label{
+.input-wrapper-black > .input-label {
     background-color: var(--black);
     color: var(--white);
 }
@@ -182,7 +182,7 @@ input::-webkit-input-placeholder {
     color: var(--gray400);
 }
 
-.input-wrapper-black > .input-label-right{
+.input-wrapper-black > .input-label-right {
 
 }
 
@@ -388,23 +388,6 @@ input::-webkit-input-placeholder {
     background-color: rgb(241, 137, 151);
 }
 
-
-.success .md-toast-content {
-    background: green;
-}
-
-.error .md-toast-content {
-    background: red;
-}
-
-.info .md-toast-content {
-    background: orange;
-}
-
-.warning .md-toast-content {
-    background: purple;
-}
-
 .primary-button {
     font-family: Gilroy-ExtraBold;
     font-size: 18px;
@@ -425,11 +408,6 @@ input::-webkit-input-placeholder {
     margin-right: 0;
 }
 
-.page {
-    width: 800px;
-    max-width: 800px;
-}
-
 md-bottom-sheet {
     padding: 0;
     border-top-width: 0;
@@ -438,8 +416,9 @@ md-bottom-sheet {
     margin: 0 auto;
     border-top-left-radius: 64px;
 }
+
 @media (max-width: 600px) {
-    md-bottom-sheet{
+    md-bottom-sheet {
         border-top-left-radius: 0;
     }
 }
@@ -450,7 +429,7 @@ md-bottom-sheet {
 
 .nowrap-disabled {
     white-space: normal;
-    word-break:break-word;
+    word-break: break-word;
 }
 
 .cursor {
@@ -463,19 +442,31 @@ md-bottom-sheet {
     width: 100%;
     gap: 16px;
     z-index: 1;
-    position: fixed;
-    border-top-right-radius: 60px;
+    position: absolute;
+    top: 0;
+    /*border-top-right-radius: 60px;*/
     font-size: 24px;
     font-family: Gilroy-ExtraBold;
 }
 
-md-dialog > .header{
+.content {
+    height: 100%;
+    padding-top: 80px;
+}
+
+.block {
+    width: 980px;
+    white-space: normal;
+}
+
+
+md-dialog > .header {
     font-size: 20px;
     text-transform: unset;
     font-family: Gilroy-Light;
 }
 
-md-dialog > .header  > img[src~="/mfm-wallet/img/back.svg"] {
+md-dialog > .header > img[src~="/mfm-wallet/img/back.svg"] {
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(213deg) brightness(101%) contrast(103%);
 }
 
@@ -505,22 +496,9 @@ body > .header > p:hover {
     text-underline-offset: 16px;
 }
 
-.content {
-    margin-top: 80px;
-}
-
-.block {
-    width: 980px;
-    white-space: normal;
-}
-
 md-dialog {
     max-width: none;
     max-height: none;
-}
-
-md-bottom-sheet md-content {
-    max-height: 500px;
 }
 
 md-bottom-sheet {
@@ -537,22 +515,7 @@ md-toast {
 md-tabs-wrapper {
     display: none;
 }
+
 md-tabs-content-wrapper {
     top: 0;
-}
-
-.pin-unfilled, .pin-filled {
-    border: 1px solid var(--gray400);
-    border-radius: 4px;
-    width: 75px;
-    height: 70px;
-    margin-left: 8px;
-    text-align: center;
-    background: #EFEFF2;
-    font-size: 70px;
-    line-height: 90px;
-}
-
-.pin-filled {
-    border: 1px solid var(--green);
 }

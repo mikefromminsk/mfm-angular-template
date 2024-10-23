@@ -55,6 +55,11 @@
     background-color: var(--black);
 }
 
+.blur-black-back {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 .green-text {
     color: var(--green);
 }
