@@ -14,6 +14,7 @@ function controller(callback) {
 
 function showDialog(templateUrl, onClose, controller) {
     window.$mdDialog.show({
+        targetEvent: window.angularEvent,
         templateUrl: templateUrl,
         escapeToClose: false,
         multiple: true,
@@ -25,6 +26,7 @@ function showDialog(templateUrl, onClose, controller) {
         if (onClose)
             onClose(result)
     })
+    window.angularEvent = null
 }
 
 function showBottomSheet(templateUrl, onClose, controller) {

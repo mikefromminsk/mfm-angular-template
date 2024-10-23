@@ -1,6 +1,7 @@
 function main($scope) {
 
-    $scope.openDialogExample = function () {
+    $scope.openDialogExample = function ($event) {
+        window.angularEvent = $event
         openDialogExample()
     }
 
