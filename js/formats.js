@@ -225,5 +225,5 @@ function addFormats($scope) {
         return Math.max(a, b)
     }
 
-    $scope.wallet = wallet
+    $scope.wallet = window.wallet || null
 }
