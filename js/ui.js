@@ -1,3 +1,9 @@
+function getParam(paramName) {
+    var uri = window.location.search.substring(1)
+    var params = new URLSearchParams(uri)
+    return params.get(paramName)
+}
+
 function controller(callback) {
     let app = angular.module("App", ['ngMaterial', 'ngAnimate'])
     app.config(function ($mdThemingProvider) {
