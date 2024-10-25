@@ -4,5 +4,6 @@
 docs
     добавить todos.md
     добавить package.json
+    дизайн https://pip.pypa.io/en/stable/installation/#supported-methods
 $$ удалить материал дизайн
 диалоги перенести сюда
