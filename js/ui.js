@@ -86,10 +86,9 @@ function animateFocus(id) {
     )
 }
 
-async function loadMarkdown(divId, url) {
+
+function setMarkdown(divId, text) {
     try {
-        const response = await fetch(url);
-        const text = await response.text();
         var defaults = {};
         defaults.highlight = function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
@@ -97,8 +96,9 @@ async function loadMarkdown(divId, url) {
                     return '<pre class="hljs"><code>' +
                         hljs.highlight(lang, str, true).value +
                         '</code></pre>';
-                } catch (__) {}
-            }else{
+                } catch (__) {
+                }
+            } else {
                 return '<pre class="hljs"><code>'
                     + md.utils.escapeHtml(str)
                     + '</code></pre>';
