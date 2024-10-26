@@ -273,6 +273,18 @@ html, body, md-dialog {
     margin: 4px;
 }
 
+.m4 {
+    margin: 4px;
+}
+
+.m8 {
+    margin: 8px;
+}
+
+.m16 {
+    margin: 16px;
+}
+
 .ml0 {
     margin-left: 0;
 }
@@ -297,11 +309,6 @@ html, body, md-dialog {
 .mv0 {
     margin-bottom: 0;
     margin-top: 0;
-}
-
-
-.m4 {
-    margin: 4px;
 }
 
 .ml4 {
@@ -330,10 +337,6 @@ html, body, md-dialog {
     margin-top: 4px;
 }
 
-.m8 {
-    margin: 8px;
-}
-
 .ml8 {
     margin-left: 8px;
 }
@@ -358,10 +361,6 @@ html, body, md-dialog {
 .mv8 {
     margin-bottom: 8px;
     margin-top: 8px;
-}
-
-.m16 {
-    margin: 16px;
 }
 
 .ml16 {
@@ -394,6 +393,18 @@ html, body, md-dialog {
     padding: 0;
 }
 
+.p4 {
+    padding: 4px;
+}
+
+.p8 {
+    padding: 8px;
+}
+
+.p16 {
+    padding: 16px;
+}
+
 .pl0 {
     padding-left: 0;
 }
@@ -418,10 +429,6 @@ html, body, md-dialog {
 .pv0 {
     padding-bottom: 0;
     padding-top: 0;
-}
-
-.p4 {
-    padding: 4px;
 }
 
 .pl4 {
@@ -450,10 +457,6 @@ html, body, md-dialog {
     padding-top: 4px;
 }
 
-.p8 {
-    padding: 8px;
-}
-
 .pl8 {
     padding-left: 8px;
 }
@@ -478,10 +481,6 @@ html, body, md-dialog {
 .pv8 {
     padding-bottom: 8px;
     padding-top: 8px;
-}
-
-.p16 {
-    padding: 16px;
 }
 
 .pl16 {

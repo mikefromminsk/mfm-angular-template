@@ -70,3 +70,7 @@ pre.hljs{
     overflow-x: auto;
     padding: 16px;
 }
+
+md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+    background-color: var(--accent);
+}
