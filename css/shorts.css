@@ -6,7 +6,7 @@ body {
 
 html, body, md-dialog {
     background-color: var(--back);
-    color: var(--text1);
+    color: var(--white);
 }
 
 a:link {
@@ -193,13 +193,13 @@ input::-webkit-input-placeholder {
 }
 
 .primary-button {
-    font-family: Gilroy-ExtraBold;
+    font-family: FontBold;
     font-size: 18px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: var(--accent);
-    color: white;
+    color: var(--white);
     padding: 18px;
     margin: 16px;
     border-radius: 4px;
@@ -214,15 +214,25 @@ input::-webkit-input-placeholder {
     margin-right: 0;
 }
 
+.text1 {
+    color: var(--white);
+    font-size: 16px;
+}
+
+.text2 {
+    color: var(--gray300);
+    font-size: 12px;
+}
+
 .text-black {
     color: var(--black);
 }
 
 .text-white {
-    color: var(--text1);
+    color: var(--white);
 }
 
-.text-gray, .text2 {
+.text-gray {
     color: var(--text2);
 }
 
@@ -275,7 +285,7 @@ input::-webkit-input-placeholder {
     font-size: 10px;
 }
 
-.text2, .size12 {
+.size12 {
     font-size: 12px;
 }
 
