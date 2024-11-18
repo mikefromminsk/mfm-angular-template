@@ -5,20 +5,16 @@ body {
 }
 
 html, body, md-dialog {
-    background-color: var(--bottom);
-    color: var(--black);
+    background-color: var(--back);
+    color: var(--text1);
 }
 
 a:link {
-    color: var(--accent-secondary);
+    color: var(--accent);
 }
 
 a:visited {
     color: var(--accent);
-}
-
-a:hover {
-    color: var(--accent-secondary);
 }
 
 a:active {
@@ -51,8 +47,10 @@ input:disabled {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.input-wrapper > input, .input-wrapper-black > input {
-    background-color: var(--bottom);
+.input-wrapper > input,
+.input-wrapper-black > input,
+textarea{
+    background-color: var(--back);
     color: var(--black);
     height: 50px;
     width: 100%;
@@ -173,22 +171,24 @@ input::-webkit-input-placeholder {
 .primary-button[disabled],
 .button[disabled],
 .button-gray[disabled] {
-    color: var(--gray200);
+    color: var(--gray100);
     cursor: default;
     background-color: var(--gray300);
+    pointer-events: none;
 }
 
 
 /* Ripple effect */
 .ripple:active {
     background-color: var(--gray200);
+    border-radius: 16px;
 }
 
-.green-back-ripple:active {
+.back-green-ripple:active {
     background-color: rgb(255, 255, 255);
 }
 
-.red-back-ripple:active {
+.back-red-ripple:active {
     background-color: rgb(241, 137, 151);
 }
 
@@ -214,117 +214,57 @@ input::-webkit-input-placeholder {
     margin-right: 0;
 }
 
-.accent-text {
-    color: var(--accent);
-}
-
-.secondary-text {
-    color: var(--accent-secondary);
-}
-
-.black-text {
+.text-black {
     color: var(--black);
 }
 
-.white-text {
-    color: var(--white);
+.text-white {
+    color: var(--text1);
 }
 
-.static-black-text {
-    color: var(--staticBlack);
+.text-gray, .text2 {
+    color: var(--text2);
 }
 
-.static-white-text {
-    color: var(--staticWhite);
+.text-green {
+    color: var(--green);
 }
 
-.accent-text {
+.text-red {
+    color: var(--red);
+}
+
+.text-accent {
     color: var(--accent);
 }
 
-.accent-back {
-    background-color: var(--accent);
-}
-
-.black-back {
+.back-black {
     background-color: var(--black);
 }
 
-.blur-black-back {
+.back-white {
+    background-color: var(--white);
+}
+
+.back-green {
+    background-color: var(--green);
+}
+
+.back-red {
+    background-color: var(--red);
+}
+
+.back-blur {
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.green-text {
-    color: var(--green);
+.back-accent {
+    background-color: var(--accent);
 }
 
-.green-back {
-    background-color: var(--green);
-}
-
-.white-back {
-    background-color: var(--white);
-}
-
-.secondary-back {
-    background-color: var(--accent-secondary);
-}
-
-.red-text {
-    color: var(--red);
-}
-
-.red-back {
-    background-color: var(--red);
-}
-
-.gray100-text {
-    color: var(--gray100);
-}
-
-.gray200-text {
-    color: var(--gray200);
-}
-
-.gray300-text {
-    color: var(--gray300);
-}
-
-.gray400-text {
-    color: var(--gray400);
-}
-
-.gray500-text {
-    color: var(--gray500);
-}
-
-.gray100-back {
+.back-gray {
     background-color: var(--gray100);
-}
-
-.gray200-back {
-    background-color: var(--gray200);
-}
-
-.gray300-back {
-    background-color: var(--gray300);
-}
-
-.gray400-back {
-    background-color: var(--gray400);
-}
-
-.gray500-back {
-    background-color: var(--gray500);
-}
-
-.upper-back {
-    background-color: var(--bottom);
-}
-
-.bottom-back {
-    background-color: var(--upper);
 }
 
 .size8 {
@@ -335,7 +275,7 @@ input::-webkit-input-placeholder {
     font-size: 10px;
 }
 
-.size12 {
+.text2, .size12 {
     font-size: 12px;
 }
 
@@ -632,10 +572,6 @@ input::-webkit-input-placeholder {
     gap: 16px;
 }
 
-.big-text {
-    font-weight: 700;
-}
-
 .regular {
     font-weight: 400;
 }
@@ -646,10 +582,6 @@ input::-webkit-input-placeholder {
 
 .bold {
     font-weight: 600;
-}
-
-.big {
-    font-weight: 700;
 }
 
 .uppercase {
@@ -679,10 +611,6 @@ input::-webkit-input-placeholder {
 .text-fill {
     text-align: justify;
     text-justify: inter-word;
-}
-
-.r3 {
-    border-radius: 3px
 }
 
 .scroll {
@@ -821,6 +749,10 @@ p {
     min-height: 10px;
 }
 
+.radius3 {
+    border-radius: 3px
+}
+
 .radius4 {
     border-radius: 4px;
 }
@@ -833,7 +765,7 @@ p {
     border-radius: 10px;
 }
 
-.radius16 {
+.radius-default, .radius16 {
     border-radius: 16px;
 }
 
@@ -860,12 +792,11 @@ p {
 
 .header {
     padding: 16px;
-    min-height: 80px;
+    min-height: 60px;
     width: 100%;
     gap: 16px;
-    background-color: var(--white);
-    font-size: 24px;
-    font-family: Gilroy-ExtraBold;
+    font-size: 20px;
+    font-family: FontBold;
 }
 
 .content {

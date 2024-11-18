@@ -78,11 +78,11 @@ function addFormats($scope) {
     $scope.percentColor = function (number) {
         if (number === undefined) return ""
         if (number == 0)
-            return {'gray400-text': true}
+            return {'text-gray': true}
         if (number > 0)
-            return {'green-text': true}
+            return {'text-green': true}
         if (number < 0)
-            return {'red-text': true}
+            return {'text-red': true}
     }
 
     $scope.formatTime = function (number) {
@@ -149,7 +149,6 @@ function addFormats($scope) {
     }
 
     $scope.close = function (result) {
-        window.$mdBottomSheet.hide(result)
         window.$mdDialog.hide(result)
         $scope.unsubscribeAll()
     }
@@ -223,6 +222,10 @@ function addFormats($scope) {
 
     $scope.max = function (a, b) {
         return Math.max(a, b)
+    }
+
+    $scope.str = function (text) {
+        return text
     }
 
     $scope.wallet = window.wallet || null
