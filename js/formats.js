@@ -59,8 +59,8 @@ function addFormats($scope) {
     $scope.formatTicker = function (domain) {
         return (domain || "").toUpperCase()
     }
-    $scope.formatChange = function (number, precision) {
-        let str = $scope.formatPercent(number, precision)
+    $scope.formatChange = function (number) {
+        let str = $scope.formatPercent(number, 2)
         if (number > 0)
             str = "+" + str;
         return str;
@@ -108,7 +108,7 @@ function addFormats($scope) {
             string = round(diff / 60 / 60 / 24 / 30, 0) + "m"
         else
             string = round(diff / 60 / 60 / 24 / 30 / 12, 0) + "y"
-        return string
+        return string + ' ago'
     }
 
     function padTo2Digits(num) {
@@ -226,6 +226,10 @@ function addFormats($scope) {
 
     $scope.str = function (text) {
         return text
+    }
+
+    $scope.openSupport = function () {
+        window.open("https://t.me/mytoken_space_bot")
     }
 
     $scope.wallet = window.wallet || null

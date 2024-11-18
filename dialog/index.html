@@ -1,13 +1,15 @@
 <md-dialog class="fill col">
     <div class="row header align-start-center">
-        <img class="ripple" src="/mfm-wallet/img/back.svg" ng-click="close()">
-        <p>Settings</p>
+        <div class="row img32 radius-default back-gray align-center-center ripple" ng-click="close()">
+            <img class="img16 img-gray400" src="/mfm-wallet/img/back.svg">
+        </div>
+        Settings
     </div>
     <div class="col content align-start-center">
         <div class="col" style="background: #0f1115">
             <div class="col block input-content">
                 <p>Content</p>
-                <div class="flex row input-wrapper-black">
+                <div class="flex row input-wrapper">
                     <div class="input-label uppercase">Domain1</div>
                     <input type="text"
                            ng-model="domain">

@@ -31,14 +31,14 @@ a:active {
 }
 
 .input-content > *:first-child {
-    padding-top: 16px;
+    margin-top: 8px;
 }
 
 .input-content > *:last-child {
-    padding-bottom: 16px;
+    margin-bottom: 8px;
 }
 
-.input-wrapper, .input-wrapper-black {
+.input-wrapper {
     position: relative;
 }
 
@@ -48,10 +48,9 @@ input:disabled {
 }
 
 .input-wrapper > input,
-.input-wrapper-black > input,
 textarea{
-    background-color: var(--back);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
     height: 50px;
     width: 100%;
     outline: none;
@@ -62,18 +61,8 @@ textarea{
     border: 1px solid var(--gray300);
 }
 
-.input-wrapper-black > input {
-    background-color: var(--gray500);
-    color: var(--white);
-    border: 1px solid var(--gray400);
-}
-
 .input-wrapper > input:disabled {
     color: var(--gray300);
-}
-
-.input-wrapper-black > input:disabled {
-    color: var(--gray400);
 }
 
 ::placeholder {
@@ -87,17 +76,12 @@ input::-webkit-inner-spin-button {
 }
 
 .input-label {
-    top: 8px;
+    top: 3px;
     left: 24px;
     position: absolute;
-    font-size: 14px;
-    background-color: var(--gray100);
-    color: var(--gray400);
-}
-
-.input-wrapper-black > .input-label {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--back);
+    color: var(--gray300);
+    font-size: 12px;
 }
 
 .input-label-right {
@@ -111,10 +95,6 @@ input::-webkit-inner-spin-button {
 
 input::-webkit-input-placeholder {
     color: var(--gray400);
-}
-
-.input-wrapper-black > .input-label-right {
-
 }
 
 .input:hover, .input:focus {
@@ -135,11 +115,11 @@ input::-webkit-input-placeholder {
 }
 
 .button, .button-gray {
-    color: var(--black);
+    color: var(--white);
     padding: 8px 16px;
     font-size: 14px;
-    border-radius: 8px;
-    border: var(--black) solid 2px;
+    border-radius: 16px;
+    border: var(--white) solid 2px;
     cursor: pointer;
     text-align: center;
 }
@@ -212,6 +192,12 @@ input::-webkit-input-placeholder {
 
 .primary-button > *:last-child {
     margin-right: 0;
+}
+
+.text0 {
+    font-family: FontBold;
+    color: var(--white);
+    font-size: 32px;
 }
 
 .text1 {
@@ -628,6 +614,10 @@ input::-webkit-input-placeholder {
     overflow: auto;
 }
 
+.scroll > :last-child {
+    margin-bottom: 160px;
+}
+
 img {
     user-drag: none;
     -webkit-user-drag: none
@@ -806,7 +796,7 @@ p {
     min-height: 60px;
     width: 100%;
     gap: 16px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: FontBold;
 }
 
@@ -817,42 +807,6 @@ p {
 .block {
     width: 980px;
     white-space: normal;
-}
-
-md-dialog > .header {
-    font-size: 20px;
-    text-transform: unset;
-    font-family: Gilroy-Light;
-}
-
-md-dialog > .header > img[src~="/mfm-wallet/img/back.svg"] {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(213deg) brightness(101%) contrast(103%);
-}
-
-.header > img[src~="/mfm-wallet/img/back.svg"] {
-    filter: invert(0%) sepia(24%) saturate(0%) hue-rotate(83deg) brightness(91%) contrast(103%);
-}
-
-.header > img {
-    width: auto;
-    height: 40px;
-    padding: 8px;
-}
-
-.header > img:hover {
-    cursor: pointer;
-}
-
-body > .header > p.selected {
-    text-decoration: underline;
-    text-underline-offset: 16px;
-}
-
-body > .header > p:hover {
-    cursor: pointer;
-    color: var(--gray400);
-    text-decoration: underline;
-    text-underline-offset: 16px;
 }
 
 @media (max-width: 600px) {
