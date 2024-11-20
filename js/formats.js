@@ -60,6 +60,8 @@ function addFormats($scope) {
         return (domain || "").toUpperCase()
     }
     $scope.formatChange = function (number) {
+        if (number == 0)
+            return ""
         let str = $scope.formatPercent(number, 2)
         if (number > 0)
             str = "+" + str;
