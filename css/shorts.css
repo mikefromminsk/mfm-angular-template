@@ -48,7 +48,7 @@ input:disabled {
 }
 
 .input-wrapper > input,
-textarea{
+textarea {
     background-color: var(--black);
     color: var(--white);
     height: 50px;
@@ -585,6 +585,10 @@ input::-webkit-input-placeholder {
     text-transform: uppercase;
 }
 
+.uppercase-first-letter::first-letter {
+    text-transform: uppercase;
+}
+
 .lowercase {
     text-transform: lowercase;
 }
@@ -637,6 +641,7 @@ img {
     width: 100%;
     height: auto;
 }
+
 /* angular fixes*/
 
 p {

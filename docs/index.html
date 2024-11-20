@@ -115,6 +115,7 @@
 
     controller(function ($scope) {
         get(getParam("path"), function (text) {
+            trackCall("page", getParam("path"))
             $scope.header = getParam("path")
             setMarkdown("page", text)
             addAnchors();
