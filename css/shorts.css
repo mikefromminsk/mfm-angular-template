@@ -106,79 +106,15 @@ input::-webkit-input-placeholder {
     padding-top: 1px
 }
 
-.blue-back-ripple,
 .primary-button {
     background-color: var(--accent);
     border: none;
-    border-radius: 2px;
     cursor: pointer;
-}
-
-.button, .button-gray {
-    color: var(--white);
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 16px;
-    border: var(--white) solid 2px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.button-gray {
-    border: var(--gray100) solid 2px;
-}
-
-.button-gray:active {
-    background-color: var(--gray300);
-}
-
-.blue-back-ripple:active,
-.primary-button:active,
-.button:active {
-    color: var(--white);
-    background-color: #8e8eea;
-}
-
-.blue-back-ripple.active,
-.primary-button.active,
-.button.active,
-.button-gray.active {
-    color: var(--gray400);
-    background-color: var(--gray200);
-}
-
-.primary-button:disabled,
-.primary-button[disabled],
-.button[disabled],
-.button-gray[disabled] {
-    color: var(--gray100);
-    cursor: default;
-    background-color: var(--gray300);
-    pointer-events: none;
-}
-
-
-/* Ripple effect */
-.ripple:active {
-    background-color: var(--gray200);
-    border-radius: 16px;
-}
-
-.back-green-ripple:active {
-    background-color: rgb(255, 255, 255);
-}
-
-.back-red-ripple:active {
-    background-color: rgb(241, 137, 151);
-}
-
-.primary-button {
     font-family: FontBold;
     font-size: 18px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--accent);
     color: var(--white);
     padding: 18px;
     margin: 16px;
@@ -192,6 +128,35 @@ input::-webkit-input-placeholder {
 
 .primary-button > *:last-child {
     margin-right: 0;
+}
+
+.button {
+    color: var(--white);
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 16px;
+    border: var(--white) solid 2px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-button:active,
+.button:active {
+    color: var(--white);
+    background-color: #8e8eea;
+}
+
+.primary-button.active,
+.button.active {
+    color: var(--gray400);
+    background-color: var(--gray200);
+}
+
+
+/* Ripple effect */
+.ripple:active {
+    background-color: var(--gray200);
+    border-radius: 16px;
 }
 
 .text0 {
@@ -262,6 +227,21 @@ input::-webkit-input-placeholder {
 
 .back-gray {
     background-color: var(--gray100);
+}
+
+.back-pay {
+    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent) 0%, var(--pay) 100%);
+}
+
+.primary-button:disabled,
+.primary-button[disabled],
+.button:disabled,
+.button[disabled] {
+    color: var(--gray100);
+    cursor: default;
+    background: var(--gray300);
+    pointer-events: none;
 }
 
 .size8 {
