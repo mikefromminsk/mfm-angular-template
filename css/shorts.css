@@ -594,6 +594,10 @@ input::-webkit-input-placeholder {
     text-justify: inter-word;
 }
 
+.horizontal-scroll {
+    overflow: auto;
+}
+
 .scroll {
     overflow: auto;
 }

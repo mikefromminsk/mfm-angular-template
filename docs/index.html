@@ -31,8 +31,6 @@
 </div>
 <style>
     body {
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-        color: #cfd0d0;
         line-height: 1.5;
         scrollbar-color: var(--gray100) transparent;
         scrollbar-width: thin;
@@ -52,12 +50,12 @@
     }
 
     h1 {
-        font-size: 48px;
+        font-size: 24px;
         line-height: 50px;
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 18px;
         line-height: 40px;
     }
 
@@ -115,7 +113,7 @@
 
     controller(function ($scope) {
         get(getParam("path"), function (text) {
-            trackCall("page", getParam("path"))
+            trackStart(getParam("path"))
             $scope.header = getParam("path")
             setMarkdown("page", text)
             addAnchors();

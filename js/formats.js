@@ -201,9 +201,8 @@ function addFormats($scope) {
         document.body.removeChild(textArea);
     }
 
-    $scope.cardFront = function (coin) {
-        return {
-        }
+    $scope.getLogoLink = function (domain) {
+        return "https://storage.mytoken.space/" + domain + ".png"
     }
 
     $scope.getLogo = function (domain, width) {
@@ -216,7 +215,7 @@ function addFormats($scope) {
             'min-height': width + 'px',
         }
         if (domain != null){
-            img['background-image'] =  "url('https://storage.mytoken.space/" + domain + ".png')"
+            img['background-image'] =  "url('" + $scope.getLogoLink(domain) + "')"
             img['background-size'] = '100% 100%'
         }
         return img
