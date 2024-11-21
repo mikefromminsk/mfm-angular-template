@@ -207,12 +207,11 @@ function addFormats($scope) {
 
     $scope.getLogo = function (domain, width) {
         if (width == null)
-            width = 32
+            width = '32px'
         var img = {
-            'width': width + 'px',
-            'height': width + 'px',
-            'min-width': width + 'px',
-            'min-height': width + 'px',
+            'width': width,
+            'min-height': width,
+            'min-width': width,
         }
         if (domain != null){
             img['background-image'] =  "url('" + $scope.getLogoLink(domain) + "')"
@@ -227,10 +226,6 @@ function addFormats($scope) {
 
     $scope.str = function (text) {
         return text
-    }
-
-    $scope.openSupport = function () {
-        window.open("https://t.me/mytoken_space_bot")
     }
 
     $scope.wallet = window.wallet || null

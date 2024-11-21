@@ -11,6 +11,7 @@ function controller(callback) {
     })
     app.controller("Controller", function ($scope, $mdBottomSheet, $mdDialog, $mdToast) {
         addFormats($scope)
+        addNavigator($scope)
         window.$mdToast = $mdToast
         window.$mdBottomSheet = $mdBottomSheet
         window.$mdDialog = $mdDialog
@@ -25,6 +26,7 @@ function showDialog(templateUrl, onClose, controller) {
         multiple: true,
         controller: function ($scope) {
             addFormats($scope)
+            addNavigator($scope)
             controller($scope)
         }
     }).then(function (result) {
@@ -39,6 +41,7 @@ function showBottomSheet(templateUrl, onClose, controller) {
         escapeToClose: false,
         controller: function ($scope) {
             addFormats($scope)
+            addNavigator($scope)
             controller($scope)
         }
     }).then(function (result) {
