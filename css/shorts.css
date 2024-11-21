@@ -65,8 +65,9 @@ textarea {
     color: var(--gray300);
 }
 
-::placeholder {
+input::placeholder {
     color: var(--gray200);
+    font-family: FontMedium, Roboto, "Helvetica Neue", sans-serif;
 }
 
 input::-webkit-outer-spin-button,
@@ -91,10 +92,6 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
     background-color: var(--gray500);
     color: var(--accent);
-}
-
-input::-webkit-input-placeholder {
-    color: var(--gray400);
 }
 
 .input:hover, .input:focus {
