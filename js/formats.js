@@ -98,19 +98,29 @@ function addFormats($scope) {
 
         var diff = new Date().getTime() / 1000 - seconds
         var string = ""
-        if (diff < 60)
-            string = round(diff, 0) + "s"
-        else if (diff < 60 * 60)
-            string = round(diff / 60, 0) + "m"
-        else if (diff < 60 * 60 * 24)
-            string = round(diff / 60 / 60, 0) + "h"
-        else if (diff < 60 * 60 * 24 * 30)
-            string = round(diff / 60 / 60 / 24, 0) + "d"
-        else if (diff < 60 * 60 * 24 * 30 * 12)
-            string = round(diff / 60 / 60 / 24 / 30, 0) + "m"
-        else
-            string = round(diff / 60 / 60 / 24 / 30 / 12, 0) + "y"
-        return string + ' ago'
+        if (diff < 60) {
+            string = round(diff, 0)
+            string += " " + (string == 1 ? str.second : str.seconds)
+        } else if (diff < 60 * 60) {
+            string = round(diff / 60, 0)
+            string += " " + (string == 1 ? str.minute : str.minutes)
+        } else if (diff < 60 * 60 * 24) {
+            string = round(diff / 60 / 60, 0)
+            string += " " + (string == 1 ? str.hour : str.hours)
+        } else if (diff < 60 * 60 * 24 * 7) {
+            string = round(diff / 60 / 60 / 24, 0)
+            string += " " + (string == 1 ? str.day : str.days)
+        } else if (diff < 60 * 60 * 24 * 30) {
+            string = round(diff / 60 / 60 / 24 / 7, 0)
+            string += " " + (string == 1 ? str.week : str.weeks)
+        } else if (diff < 60 * 60 * 24 * 365) {
+            string = round(diff / 60 / 60 / 24 / 30, 0)
+            string += " " + (string == 1 ? str.month : str.months)
+        } else {
+            string = round(diff / 60 / 60 / 24 / 365, 0)
+            string += " " + (string == 1 ? str.year : str.years)
+        }
+        return (string + " " + str.ago).toLowerCase()
     }
 
     function padTo2Digits(num) {
@@ -121,7 +131,7 @@ function addFormats($scope) {
         if (number == "") return ""
         let date = new Date(number * 1000)
         if (new Date().toDateString() === date.toDateString())
-            return "today"
+            return str.today
         return [
             padTo2Digits(date.getDate()),
             padTo2Digits(date.getMonth() + 1),
@@ -136,7 +146,7 @@ function addFormats($scope) {
     $scope.subscription_id_list = []
     $scope.subscribe = function (channel, callback) {
         if (channel == "price" || 1 == 1)
-        $scope.subscription_id_list.push(subscribe(channel, callback))
+            $scope.subscription_id_list.push(subscribe(channel, callback))
     }
 
     $scope.unsubscribeAll = function () {
@@ -213,8 +223,8 @@ function addFormats($scope) {
             'min-height': width,
             'min-width': width,
         }
-        if (domain != null){
-            img['background-image'] =  "url('" + $scope.getLogoLink(domain) + "')"
+        if (domain != null) {
+            img['background-image'] = "url('" + $scope.getLogoLink(domain) + "')"
             img['background-size'] = '100% 100%'
         }
         return img
@@ -223,10 +233,4 @@ function addFormats($scope) {
     $scope.max = function (a, b) {
         return Math.max(a, b)
     }
-
-    $scope.str = function (text) {
-        return text
-    }
-
-    $scope.wallet = window.wallet || null
 }

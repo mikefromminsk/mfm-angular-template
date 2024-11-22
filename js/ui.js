@@ -10,44 +10,50 @@ function controller(callback) {
         $mdThemingProvider.disableTheming();
     })
     app.controller("Controller", function ($scope, $mdBottomSheet, $mdDialog, $mdToast) {
-        addFormats($scope)
-        addNavigator($scope)
         window.$mdToast = $mdToast
         window.$mdBottomSheet = $mdBottomSheet
         window.$mdDialog = $mdDialog
-        callback($scope)
+        addGlobalVars($scope, callback)
     })
 }
 
-function showDialog(templateUrl, onClose, controller) {
-    window.$mdDialog.show({
-        templateUrl: templateUrl,
-        escapeToClose: false,
-        multiple: true,
-        controller: function ($scope) {
-            addFormats($scope)
-            addNavigator($scope)
-            controller($scope)
-        }
-    }).then(function (result) {
-        if (onClose)
-            onClose(result)
-    })
+function addGlobalVars($scope, callback) {
+    addFormats($scope)
+    addNavigator($scope)
+    $scope.wallet = window.wallet
+    $scope.str = window.str
+    callback($scope)
 }
 
-function showBottomSheet(templateUrl, onClose, controller) {
-    window.$mdBottomSheet.show({
-        templateUrl: templateUrl,
-        escapeToClose: false,
-        controller: function ($scope) {
-            addFormats($scope)
-            addNavigator($scope)
-            controller($scope)
-        }
-    }).then(function (result) {
-        if (onClose)
-            onClose(result)
-    })
+function showDialog(templateUrl, onClose, callback) {
+    setTimeout(function () {
+        window.$mdDialog.show({
+            templateUrl: templateUrl,
+            escapeToClose: false,
+            multiple: true,
+            controller: function ($scope) {
+                addGlobalVars($scope, callback)
+            }
+        }).then(function (result) {
+            if (onClose)
+                onClose(result)
+        })
+    }, 100)
+}
+
+function showBottomSheet(templateUrl, onClose, callback) {
+    setTimeout(function () {
+        window.$mdBottomSheet.show({
+            templateUrl: templateUrl,
+            escapeToClose: false,
+            controller: function ($scope) {
+                addGlobalVars($scope, callback)
+            }
+        }).then(function (result) {
+            if (onClose)
+                onClose(result)
+        })
+    }, 100)
 }
 
 function showError(message, error) {
