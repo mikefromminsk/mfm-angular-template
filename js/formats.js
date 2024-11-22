@@ -155,16 +155,6 @@ function addFormats($scope) {
         }
     }
 
-    $scope.back = function (result) {
-        window.$mdBottomSheet.hide(result)
-        $scope.unsubscribeAll()
-    }
-
-    $scope.close = function (result) {
-        window.$mdDialog.hide(result)
-        $scope.unsubscribeAll()
-    }
-
     $scope.random = function (from, to) {
         return Math.floor(Math.random() * to) + from;
     }

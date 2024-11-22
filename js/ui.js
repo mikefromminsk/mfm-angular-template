@@ -1,7 +1,7 @@
-function getParam(paramName) {
+function getParam(paramName, def) {
     var uri = window.location.search.substring(1)
     var params = new URLSearchParams(uri)
-    return params.get(paramName)
+    return params.get(paramName) || def
 }
 
 function controller(callback) {
