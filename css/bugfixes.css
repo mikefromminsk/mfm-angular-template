@@ -45,6 +45,9 @@ md-dialog {
     max-height: none;
 }
 
+md-dialog > *:last-child {
+    margin-bottom: 60px;
+}
 
 md-bottom-sheet {
     z-index: 10000;

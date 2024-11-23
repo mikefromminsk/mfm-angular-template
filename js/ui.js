@@ -22,6 +22,7 @@ function addGlobalVars($scope, callback) {
     addNavigator($scope)
     $scope.wallet = window.wallet
     $scope.str = window.str
+    $scope.bank_address = "bank"
     callback($scope)
 }
 
