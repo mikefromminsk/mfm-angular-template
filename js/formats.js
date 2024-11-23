@@ -185,14 +185,17 @@ function addFormats($scope) {
     $scope.getLogo = function (domain, width) {
         if (width == null)
             width = '32px'
-        var img = {
+        let img = {
             'width': width,
-            'min-height': width,
+            'height': width,
             'min-width': width,
         }
         if (domain != null) {
             img['background-image'] = "url('" + $scope.getLogoLink(domain) + "')"
-            img['background-size'] = '100% 100%'
+
+            img['background-size'] = 'cover'
+            img['background-repeat'] = 'no-repeat'
+            img['background-position'] = 'center center'
         }
         return img
     }
