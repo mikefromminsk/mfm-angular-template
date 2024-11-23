@@ -1,6 +1,6 @@
 function getParam(paramName, def) {
-    var uri = window.location.search.substring(1)
-    var params = new URLSearchParams(uri)
+    let uri = window.location.search.substring(1)
+    let params = new URLSearchParams(uri)
     return params.get(paramName) || def
 }
 
@@ -57,43 +57,30 @@ function showBottomSheet(templateUrl, onClose, callback) {
     }, 100)
 }
 
-function showError(message, error) {
-    if (error) {
-        error(message)
-    } else {
-        if (window.$mdToast != null) {
-            window.$mdToast.show(window.$mdToast.simple().toastClass('red-toast').textContent(message))
-        } else {
-            alert(message)
-        }
+
+function showMessage(message, toastClass, callback) {
+    if (message == null) message = ""
+    let spaceCount = message.split(' ').length + 1
+    let delay = spaceCount / 4 * 1000
+    if (delay < 1000) delay = 1000
+    if (delay > 5000) delay = 5000
+    if (window.$mdToast != null) {
+        window.$mdToast.show(window.$mdToast.simple()
+                .toastClass(toastClass)
+                .textContent(message)
+                .hideDelay(delay))
     }
+    if (callback)
+        callback(message)
+}
+
+function showError(message, error) {
+    showMessage(message, 'red-toast', error)
 }
 
 function showSuccess(message, success) {
-    if (window.$mdToast != null) {
-        window.$mdToast.show(window.$mdToast.simple().toastClass('green-toast').textContent(message))
-    } else {
-        alert(message)
-    }
-    if (success)
-        success(message)
+    showMessage(message, 'green-toast', success)
 }
-
-function animateFocus(id) {
-    document.getElementById(id).animate(
-        [
-            {transform: "translateY(0px)"},
-            {transform: "translateY(1px)"},
-            {transform: "translateY(-1px)"},
-            {transform: "translateY(0px)"},
-        ],
-        {
-            duration: 300,
-            iterations: 5,
-        },
-    )
-}
-
 
 function setMarkdown(divId, text) {
     try {

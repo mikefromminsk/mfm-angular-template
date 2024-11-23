@@ -66,3 +66,11 @@ pre.hljs{
 md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
     background-color: var(--accent);
 }
+
+md-input-container{
+    margin: 0;
+}
+
+.md-errors-spacer{
+    display: none;
+}

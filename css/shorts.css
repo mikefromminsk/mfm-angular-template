@@ -47,8 +47,7 @@ input:disabled {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.input-wrapper > input,
-textarea {
+.input-wrapper > input{
     background-color: var(--black);
     color: var(--white);
     height: 50px;
@@ -303,7 +302,7 @@ input::-webkit-inner-spin-button {
 }
 
 .m0 {
-    margin: 4px;
+    margin: 0px;
 }
 
 .m4 {
@@ -591,8 +590,9 @@ input::-webkit-inner-spin-button {
     text-justify: inter-word;
 }
 
-.horizontal-scroll {
-    overflow: auto;
+.scroll-horizontal {
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .scroll {
