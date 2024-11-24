@@ -45,6 +45,10 @@ md-dialog > *:last-child {
     margin-bottom: 60px;
 }
 
+md-dialog.p0 > *:last-child {
+    margin-bottom: 0;
+}
+
 md-toast {
     z-index: 10001;
 }

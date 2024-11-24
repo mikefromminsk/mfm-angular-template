@@ -47,7 +47,7 @@ input:disabled {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.input-wrapper > input{
+.input-wrapper > input {
     background-color: var(--black);
     color: var(--white);
     height: 50px;
@@ -76,9 +76,10 @@ input::-webkit-inner-spin-button {
 }
 
 .input-label {
-    top: 3px;
+    top: 0;
     left: 24px;
     position: absolute;
+    padding: 0 2px;
     background-color: var(--back);
     color: var(--gray300);
     font-size: 12px;
@@ -808,3 +809,7 @@ p {
     }
 }
 
+
+.border-accent {
+    border: 1px solid var(--accent);
+}

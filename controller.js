@@ -1,5 +1,14 @@
-function main($scope) {
+function getProfile(domain, success, error) {
+    postContract("mfm-token", "profile.php", {
+        domain: domain,
+        address: wallet.address(),
+    }, success, error)
+}
 
+function main($scope) {
+    let domain = getParam("domain")
+
+    // has to be in navigator.js
     $scope.openDialogExample = function ($event) {
         window.angularEvent = $event
         openDialogExample()
@@ -9,17 +18,13 @@ function main($scope) {
         openBottomSheetExample()
     }
 
-    var domain = getParam("domain")
 
     function init() {
         loadProfile()
     }
 
     function loadProfile() {
-        postContract("mfm-token", "profile.php", {
-            domain: domain,
-            address: wallet.address(),
-        }, function (response) {
+        getProfile(domain, function (response) {
             $scope.token = response
             $scope.$apply()
         })
