@@ -3,10 +3,11 @@ function addFormats($scope) {
         return +(Math.round(num + "e+" + precision) + "e-" + precision)
     }
 
-    function shortNumber(number) {
-        number = $scope.round(number, 2)
-        var numberFormat = new Intl.NumberFormat()
-        var result
+    function shortNumber(number, precision) {
+        if (precision == null) precision = 2
+        number = $scope.round(number, precision)
+        let numberFormat = new Intl.NumberFormat()
+        let result
         if (number >= 1000000000)
             result = numberFormat.format($scope.round(number / 1000000, 2)) + "M"
         else if (number >= 1000)
@@ -17,26 +18,26 @@ function addFormats($scope) {
     }
 
     $scope.formatSec = function (sec) {
-        var d = new Date(sec * 1000);
+        let d = new Date(sec * 1000);
 
         function format_two_digits(n) {
             return n < 10 ? '0' + n : n;
         }
 
-        var hours = format_two_digits(d.getHours());
-        var minutes = format_two_digits(d.getMinutes());
+        let hours = format_two_digits(d.getHours());
+        let minutes = format_two_digits(d.getMinutes());
         return hours + ":" + minutes;
     }
 
-    $scope.formatPrice = function (number) {
+    $scope.formatPrice = function (number, precision) {
         if (number == null)
             number = 0;
-        return "$" + shortNumber(number)
+        return "$" + shortNumber(number, precision)
     }
-    $scope.formatAmount = function (number, domain) {
+    $scope.formatAmount = function (number, domain, precision) {
         if (number == null)
             number = 0;
-        var result = shortNumber(number)
+        let result = shortNumber(number, precision)
         if (domain == "mfm-bank")
             return "$" + result
         if (domain != null) {
@@ -178,6 +179,13 @@ function addFormats($scope) {
         return result;
     }
 
+    $scope.max = function (a, b) {
+        return Math.max(a, b)
+    }
+
+
+    // this is not a formats
+
     $scope.getLogoLink = function (domain) {
         return "https://storage.mytoken.space/" + domain + ".png"
     }
@@ -185,22 +193,51 @@ function addFormats($scope) {
     $scope.getLogo = function (domain, width) {
         if (width == null)
             width = '32px'
-        let img = {
+        let style = {
             'width': width,
             'height': width,
             'min-width': width,
         }
         if (domain != null) {
-            img['background-image'] = "url('" + $scope.getLogoLink(domain) + "')"
-
-            img['background-size'] = 'cover'
-            img['background-repeat'] = 'no-repeat'
-            img['background-position'] = 'center center'
+            style['background-image'] = "url('" + $scope.getLogoLink(domain) + "')"
+            style['background-size'] = 'cover'
+            style['background-repeat'] = 'no-repeat'
+            style['background-position'] = 'center center'
         }
-        return img
+        return style
     }
 
-    $scope.max = function (a, b) {
-        return Math.max(a, b)
+    $scope.getBack = function (domain) {
+        if (domain == null) return {}
+        let colors = [
+            "#F44336",
+            "#E91E63",
+            "#9C27B0",
+            "#673AB7",
+            "#3F51B5",
+            "#2196F3",
+            "#03A9F4",
+            "#00BCD4",
+            "#009688",
+            "#4CAF50",
+            "#CDDC39",
+            "#FFEB3B",
+            "#FFC107",
+            "#FF9800",
+            "#FF5722",
+            "#795548",
+            "#607D8B",
+            "#9E9E9E",
+        ]
+        let random4colors = []
+        for (let i = 0; i < 4; i++) {
+            random4colors.push(colors[domain.charCodeAt(i) % colors.length])
+        }
+        return {
+            'background': 'linear-gradient(90deg, ' + random4colors.join(', ') + ')',
+            'background-size': '400% 400%',
+            'animation': 'gradient 10s ease infinite',
+            'transform': 'translate3d(0, 0, 0)',
+        }
     }
 }
