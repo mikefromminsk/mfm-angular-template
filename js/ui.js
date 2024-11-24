@@ -4,6 +4,17 @@ function getParam(paramName, def) {
     return params.get(paramName) || def
 }
 
+function loadDialect($scope) {
+    let lang = getParam('lang', storage.getString(storageKeys.language, navigator.language.split("-")[0]))
+    let scriptTag = document.createElement('script');
+    scriptTag.src = "/mfm-wallet/strings/lang/" + lang + ".js";
+    scriptTag.onload = function () {
+        $scope.str = window.str
+        $scope.$apply()
+    }
+    document.body.appendChild(scriptTag)
+}
+
 function controller(callback) {
     let app = angular.module("App", ['ngMaterial', 'ngAnimate'])
     app.config(function ($mdThemingProvider) {
@@ -14,6 +25,7 @@ function controller(callback) {
         window.$mdBottomSheet = $mdBottomSheet
         window.$mdDialog = $mdDialog
         addGlobalVars($scope, callback)
+        loadDialect($scope)
     })
 }
 
@@ -66,9 +78,9 @@ function showMessage(message, toastClass, callback) {
     if (delay > 5000) delay = 5000
     if (window.$mdToast != null) {
         window.$mdToast.show(window.$mdToast.simple()
-                .toastClass(toastClass)
-                .textContent(message)
-                .hideDelay(delay))
+            .toastClass(toastClass)
+            .textContent(message)
+            .hideDelay(delay))
     }
     if (callback)
         callback(message)
