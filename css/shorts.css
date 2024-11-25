@@ -137,19 +137,6 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
-.primary-button:active,
-.button:active {
-    color: var(--white);
-    background-color: #8e8eea;
-}
-
-.primary-button.active,
-.button.active {
-    color: var(--gray400);
-    background-color: var(--gray200);
-}
-
-
 /* Ripple effect */
 .ripple:active {
     background-color: var(--gray200);
@@ -198,37 +185,42 @@ input::-webkit-inner-spin-button {
 }
 
 .back-black {
-    background-color: var(--black);
+    background: var(--black);
 }
 
 .back-white {
-    background-color: var(--white);
+    background: var(--white);
 }
 
 .back-green {
-    background-color: var(--green);
+    background: var(--green);
 }
 
 .back-red {
-    background-color: var(--red);
+    background: var(--red);
 }
 
 .back-blur {
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .back-accent {
-    background-color: var(--accent);
+    background: var(--accent);
 }
 
 .back-gray {
-    background-color: var(--gray100);
+    background: var(--gray100);
 }
 
 .back-pay {
-    background: var(--accent);
     background: linear-gradient(90deg, var(--accent) 0%, var(--pay) 100%);
+}
+
+.primary-button:active,
+.button:active {
+    color: var(--gray400);
+    background: var(--gray200);
 }
 
 .primary-button:disabled,
@@ -540,6 +532,10 @@ input::-webkit-inner-spin-button {
 .pv16 {
     padding-bottom: 16px;
     padding-top: 16px;
+}
+
+.gap8 {
+    gap: 8px;
 }
 
 .gap16 {
