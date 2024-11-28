@@ -47,7 +47,8 @@ input:disabled {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.input-wrapper > input {
+.input-wrapper > input,
+textarea {
     background-color: var(--black);
     color: var(--white);
     height: 50px;
