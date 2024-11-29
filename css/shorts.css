@@ -116,6 +116,7 @@ input::-webkit-inner-spin-button {
     color: var(--white);
     padding: 18px;
     margin: 16px;
+    text-align: center;
     border-radius: 4px;
 }
 

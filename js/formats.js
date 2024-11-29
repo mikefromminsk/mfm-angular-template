@@ -40,12 +40,20 @@ function addFormats($scope) {
         let result = shortNumber(number, precision)
         if (domain == "mfm-bank")
             return "$" + result
-        if (domain != null) {
+        if (domain != null && domain.length > 0) {
             if (domain.length > 5)
                 domain = domain.substr(0, 3)
             return result + " " + domain.toUpperCase()
         }
         return result
+    }
+
+    $scope.watchAmount = function (newValue, oldValue) {
+        if (newValue == null) return;
+        if (newValue != oldValue && $scope.formatAmount(newValue, '', 2) != newValue) {
+            newValue = $scope.formatAmount(newValue, '', 2)
+        }
+        return newValue;
     }
     $scope.formatHash = function (hash) {
         if (hash == null) return ""
