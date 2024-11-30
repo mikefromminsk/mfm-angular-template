@@ -117,3 +117,10 @@ function setMarkdown(divId, text) {
         console.error('Ошибка загрузки данных:', error);
     }
 }
+
+function clearFocus(){
+    let tmp = document.createElement("input");
+    document.body.appendChild(tmp);
+    tmp.focus();
+    document.body.removeChild(tmp);
+}

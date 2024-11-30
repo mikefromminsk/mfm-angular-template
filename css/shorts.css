@@ -131,10 +131,11 @@ input::-webkit-inner-spin-button {
 
 .button {
     color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--gray300);
     padding: 8px 16px;
     font-size: 14px;
-    border-radius: 16px;
-    border: var(--white) solid 2px;
+    border-radius: 4px;
     cursor: pointer;
     text-align: center;
 }

@@ -59,11 +59,11 @@ function addFormats($scope) {
         if (hash == null) return ""
         return hash.substr(0, 5) + "..." + hash.substr(-5)
     }
-    $scope.formatDomain = function (domain) {
+    $scope.formatTickerShort = function (domain) {
         if (domain == null) return ""
-        if (domain.length > 5)
-            domain = domain.substr(0, 3).toUpperCase()
-        return domain
+        if (domain.length > 8)
+            domain = domain.substr(0, 7) + ".."
+        return $scope.formatTicker(domain)
     }
     $scope.formatTicker = function (domain) {
         return (domain || "").toUpperCase()
@@ -247,5 +247,25 @@ function addFormats($scope) {
             'animation': 'gradient 10s ease infinite',
             'transform': 'translate3d(0, 0, 0)',
         }
+    }
+
+
+    let keyPressCallback = null
+    let keyPressListener = function (e) {
+        if (e.key === 'Enter') {
+            if (keyPressCallback)
+                keyPressCallback()
+        }
+    }
+    $scope.pressEnter = function (callback) {
+        if (callback){
+            keyPressCallback = callback
+            document.addEventListener('keypress', keyPressListener);
+        }
+    }
+
+    $scope.removePressEnter = function () {
+        if (keyPressCallback)
+            document.removeEventListener('keypress', keyPressListener);
     }
 }
