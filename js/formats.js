@@ -152,10 +152,13 @@ function addFormats($scope) {
         return $scope.round(number, 0) + "%";
     }
 
+    $scope.channels = []
     $scope.subscription_id_list = []
     $scope.subscribe = function (channel, callback) {
-        if (channel == "price" || 1 == 1)
+        if ($scope.channels.indexOf(channel) == -1) {
             $scope.subscription_id_list.push(subscribe(channel, callback))
+            $scope.channels.push(channel)
+        }
     }
 
     $scope.unsubscribeAll = function () {
