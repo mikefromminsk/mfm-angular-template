@@ -4,10 +4,17 @@ function getParam(paramName, def) {
     return params.get(paramName) || def
 }
 
+function getLanguage() {
+    return getParam('lang', storage.getString(storageKeys.language, navigator.language))
+}
+
+function getBaseLanguage() {
+    return getBaseLanguage().split("-")[0]
+}
+
 function loadDialect($scope) {
-    let lang = getParam('lang', storage.getString(storageKeys.language, navigator.language.split("-")[0]))
     let scriptTag = document.createElement('script');
-    scriptTag.src = "/mfm-wallet/strings/lang/" + lang + ".js";
+    scriptTag.src = "/mfm-wallet/strings/lang/" + getLanguage() + ".js";
     scriptTag.onload = function () {
         $scope.str = window.str
         $scope.$apply()
