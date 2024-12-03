@@ -46,6 +46,7 @@ function showDialog(templateUrl, onClose, callback) {
             multiple: true,
             controller: function ($scope) {
                 addGlobalVars($scope, callback)
+                swipeToRefresh($scope.close)
             }
         }).then(function (result) {
             if (onClose)
