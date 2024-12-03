@@ -599,8 +599,8 @@ input::-webkit-inner-spin-button {
     overflow: auto;
 }
 
-.scroll > :last-child {
-    margin-bottom: 160px;
+.scroll .block > :last-child {
+    padding-bottom: 160px;
 }
 
 img {
