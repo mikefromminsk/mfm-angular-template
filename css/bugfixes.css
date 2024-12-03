@@ -78,3 +78,7 @@ md-input-container{
 .md-errors-spacer{
     display: none;
 }
+
+.md-track-container{
+    background-color: var(--accent);
+}

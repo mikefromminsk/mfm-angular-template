@@ -786,10 +786,6 @@ p {
     font-family: FontBold;
 }
 
-.content {
-    height: 100%;
-}
-
 .block {
     width: 980px;
     white-space: normal;
