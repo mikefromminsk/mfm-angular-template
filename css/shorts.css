@@ -117,6 +117,7 @@ input::-webkit-inner-spin-button {
     margin: 16px;
     text-align: center;
     border-radius: 4px;
+    word-wrap: break-word;
 }
 
 .primary-button > * {
