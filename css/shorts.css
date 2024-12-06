@@ -130,7 +130,7 @@ input::-webkit-inner-spin-button {
     margin-right: 0;
 }
 
-.button {
+button {
     color: var(--white);
     background-color: var(--black);
     border: 1px solid var(--gray300);
@@ -222,15 +222,15 @@ input::-webkit-inner-spin-button {
 }
 
 .primary-button:active,
-.button:active {
+button:active {
     color: var(--gray400);
     background: var(--gray200);
 }
 
 .primary-button:disabled,
 .primary-button[disabled],
-.button:disabled,
-.button[disabled] {
+button:disabled,
+button[disabled] {
     color: var(--gray100);
     cursor: default;
     background: var(--gray300);
@@ -811,6 +811,10 @@ p {
     }
 }
 
+
+.border-none {
+    border: none;
+}
 
 .border-accent {
     border: 1px solid var(--accent);

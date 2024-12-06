@@ -30,6 +30,7 @@ md-bottom-sheet {
     z-index: 10000;
     background: var(--black);
     color: var(--white);
+    box-shadow: 4px 0 4px rgba(255,255,255,0.2);
 }
 
 md-bottom-sheet > .header {

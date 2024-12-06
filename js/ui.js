@@ -43,6 +43,8 @@ function addGlobalVars($scope, callback) {
     $scope.str = window.str
     $scope.bank_address = "bank"
     callback($scope)
+    if ($scope.swipeToRefreshDisabled)
+    swipeToRefresh($scope.swipeToRefresh || $scope.close)
 }
 
 function showDialog(templateUrl, onClose, callback) {
@@ -53,7 +55,6 @@ function showDialog(templateUrl, onClose, callback) {
             multiple: true,
             controller: function ($scope) {
                 addGlobalVars($scope, callback)
-                swipeToRefresh($scope.close)
             }
         }).then(function (result) {
             if (onClose)
