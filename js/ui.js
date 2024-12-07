@@ -42,6 +42,7 @@ function addGlobalVars($scope, callback) {
     $scope.wallet = window.wallet
     $scope.str = window.str
     $scope.bank_address = "bank"
+    $scope.staking_address = "staking"
     callback($scope)
     if ($scope.swipeToRefreshDisabled)
     swipeToRefresh($scope.swipeToRefresh || $scope.close)
