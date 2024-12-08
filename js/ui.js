@@ -44,12 +44,13 @@ function addGlobalVars($scope, callback) {
     $scope.bank_address = "bank"
     $scope.staking_address = "staking"
     callback($scope)
-    if ($scope.swipeToRefreshDisabled)
-    swipeToRefresh($scope.swipeToRefresh || $scope.close)
+    if (!$scope.swipeToRefreshDisabled)
+        swipeToRefresh($scope.swipeToRefresh || $scope.close)
 }
 
 function showDialog(templateUrl, onClose, callback) {
     setTimeout(function () {
+        history.pushState({ page: 1 }, '', "#" + templateUrl);
         window.$mdDialog.show({
             templateUrl: templateUrl,
             escapeToClose: false,
