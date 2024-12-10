@@ -13,8 +13,8 @@ function getBaseLanguage() {
 }
 
 function loadDialect($scope) {
-    let scriptTag = document.createElement('script');
-    scriptTag.src = "/mfm-wallet/strings/lang/" + getLanguage() + ".js";
+    let scriptTag = document.createElement('script')
+    scriptTag.src = "/mfm-wallet/strings/lang/" + getLanguage() + ".js"
     scriptTag.onload = function () {
         $scope.str = window.str
         $scope.$apply()
@@ -24,8 +24,13 @@ function loadDialect($scope) {
 
 function controller(callback) {
     let app = angular.module("App", ['ngMaterial', 'ngAnimate'])
-    app.config(function ($mdThemingProvider) {
-        $mdThemingProvider.disableTheming();
+    app.config(function ($mdThemingProvider, $locationProvider) {
+        $mdThemingProvider.disableTheming()
+        // Включаем HTML5 Mode
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        })
     })
     app.controller("Controller", function ($scope, $mdBottomSheet, $mdDialog, $mdToast) {
         window.$mdToast = $mdToast
@@ -50,7 +55,6 @@ function addGlobalVars($scope, callback) {
 
 function showDialog(templateUrl, onClose, callback) {
     setTimeout(function () {
-        history.pushState({ page: 1 }, '', "#" + templateUrl);
         window.$mdDialog.show({
             templateUrl: templateUrl,
             escapeToClose: false,
@@ -107,31 +111,31 @@ function showSuccess(message, success) {
 
 function setMarkdown(divId, text) {
     try {
-        var defaults = {};
+        var defaults = {}
         defaults.highlight = function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
                 try {
                     return '<pre class="hljs"><code>' +
                         hljs.highlight(lang, str, true).value +
-                        '</code></pre>';
+                        '</code></pre>'
                 } catch (__) {
                 }
             } else {
                 return '<pre class="hljs"><code>'
                     + md.utils.escapeHtml(str)
-                    + '</code></pre>';
+                    + '</code></pre>'
             }
         }
         let md = window.markdownit(defaults)
-        document.getElementById(divId).innerHTML = md.render(text);
+        document.getElementById(divId).innerHTML = md.render(text)
     } catch (error) {
-        console.error('Ошибка загрузки данных:', error);
+        console.error('Ошибка загрузки данных:', error)
     }
 }
 
-function clearFocus(){
-    let tmp = document.createElement("input");
-    document.body.appendChild(tmp);
-    tmp.focus();
-    document.body.removeChild(tmp);
+function clearFocus() {
+    let tmp = document.createElement("input")
+    document.body.appendChild(tmp)
+    tmp.focus()
+    document.body.removeChild(tmp)
 }
