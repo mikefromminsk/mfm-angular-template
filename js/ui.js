@@ -134,8 +134,5 @@ function setMarkdown(divId, text) {
 }
 
 function clearFocus() {
-    let tmp = document.createElement("input")
-    document.body.appendChild(tmp)
-    tmp.focus()
-    document.body.removeChild(tmp)
+    document.body.focus()
 }
