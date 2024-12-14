@@ -574,16 +574,8 @@ button[disabled] {
     text-decoration: underline;
 }
 
-.shadow-black {
-    box-shadow: 0 0 3px 0 var(--black);
-}
-
-.shadow-white {
-    box-shadow: 0 0 3px 0 var(--white);
-}
-
-.shadow-blue {
-    box-shadow: 0 0 2px 0 #4F50FB;
+.shadow {
+    box-shadow: 4px 0 4px rgba(255,255,255,0.2);
 }
 
 .text-fill {
