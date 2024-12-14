@@ -1,6 +1,6 @@
 function addFormats($scope) {
     $scope.round = function (num, precision) {
-        return +(Math.round(num + "e+" + precision) + "e-" + precision)
+        return +(Math.round(num + "e+" + precision) + "e-" + precision);
     }
 
     function shortNumber(number, precision) {
@@ -15,7 +15,7 @@ function addFormats($scope) {
         else if (number >= 1_000)
             result = numberFormat.format($scope.round(number, 0))
         else
-            result = numberFormat.format($scope.round(number, 4))
+            result = number
         return result
     }
 
@@ -40,8 +40,6 @@ function addFormats($scope) {
         if (number == null)
             number = 0;
         let result = shortNumber(number, precision)
-        if (domain == "mfm-bank")
-            return "$" + result
         if (domain != null && domain.length > 0) {
             if (domain.length > 5)
                 domain = domain.substr(0, 3)
