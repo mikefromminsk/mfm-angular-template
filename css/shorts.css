@@ -46,8 +46,18 @@ input:disabled {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.input-wrapper > *:first-child {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 26px;
+}
+
 .input-wrapper > input,
 textarea {
+    padding-left: 52px;
     background-color: var(--black);
     color: var(--white);
     height: 50px;
@@ -55,7 +65,6 @@ textarea {
     outline: none;
     border-radius: 4px;
     font-size: 16px;
-    padding-left: 12px;
     padding-top: 4px;
     border: 1px solid var(--gray300);
 }
